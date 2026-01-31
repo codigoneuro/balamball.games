@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://br4bobvux3068"]
 
-[ext_resource type="Texture2D" uid="uid://gk4pvjkt1m38" path="res://Background/backgroun-testing.jpg" id="1_tnbny"]
+[ext_resource type="Texture2D" uid="uid://dpidsm386h6jm" path="res://Characters/ver2.png" id="1_shhme"]
 [ext_resource type="PackedScene" uid="uid://dptdrrpn3igqq" path="res://Scenes/Player.tscn" id="2_2wvcj"]
 [ext_resource type="PackedScene" uid="uid://jfg4gyf6yon" path="res://Scenes/tezcat.tscn" id="3_uh3b8"]
 [ext_resource type="PackedScene" uid="uid://bmgghpyqmqe5g" path="res://Scenes/ball.tscn" id="4_shhme"]
@@ -20,7 +20,7 @@ size = Vector2(283, 15)
 [node name="Board" type="Node2D" unique_id=1693222382]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=481310172]
-texture = ExtResource("1_tnbny")
+texture = ExtResource("1_shhme")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=49251775]
 
