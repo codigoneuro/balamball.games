@@ -7,6 +7,7 @@
 radius = 24.083189
 
 [node name="Balam" type="CharacterBody2D" unique_id=2899691 groups=["Balam"]]
+motion_mode = 1
 script = ExtResource("1_kyqiw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=194443356]
