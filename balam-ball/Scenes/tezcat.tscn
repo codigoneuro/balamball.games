@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jfg4gyf6yon"]
+
+[ext_resource type="Script" uid="uid://dtuiud7y3wrde" path="res://Scripts/tezcat.gd" id="1_y2m1b"]
+[ext_resource type="Texture2D" uid="uid://c61pklamncr5t" path="res://Characters/tezcat.png" id="2_y2m1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2jysc"]
+radius = 37.12142
+
+[node name="Tezcat" type="CharacterBody2D" unique_id=14505957]
+script = ExtResource("1_y2m1b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1968003714]
+position = Vector2(-4.2000003, 8.100006)
+scale = Vector2(0.089062504, 0.08417969)
+texture = ExtResource("2_y2m1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904419299]
+position = Vector2(-4, 9)
+shape = SubResource("CircleShape2D_2jysc")
