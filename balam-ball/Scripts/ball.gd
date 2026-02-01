@@ -39,14 +39,10 @@ func _physics_process(delta: float) -> void:
 			if objeto_tocado.is_in_group("Balam"): 
 				ultimo_jugador = "Balam" 
 				velocity *= incremento_velocidad 
-				
-				#$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.2)
-				#$AudioStreamPlayer2D.play()
-				
 			elif objeto_tocado.is_in_group("Tezcat"): 
 				ultimo_jugador = "Tezcat" 
 				velocity *= incremento_velocidad
-			# REPRODUCIR SONIDO:
+			# Reproducir sonido
 			$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.2)
 			$AudioStreamPlayer2D.play()
 			print("¡Golpe de jugador detectado!")

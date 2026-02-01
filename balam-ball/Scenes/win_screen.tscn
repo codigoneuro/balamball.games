@@ -4,17 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b63px2ivcf08b" path="res://Characters/win.png" id="2_awi1s"]
 [ext_resource type="AudioStream" uid="uid://b7yav4xi11brv" path="res://music/you win.wav" id="3_awi1s"]
 
-[node name="WinScreen" type="Control" unique_id=1468089661]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="WinScreen" type="CanvasLayer" unique_id=355530508]
+process_mode = 3
 script = ExtResource("1_a00f1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1119304952]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,12 +17,11 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1375585486]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 152.0
-offset_right = 205.33337
+offset_left = -8.0
+offset_right = 45.333374
 offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -37,18 +30,25 @@ texture = ExtResource("2_awi1s")
 stretch_mode = 6
 
 [node name="Record" type="Label" parent="." unique_id=1661221672]
-layout_mode = 0
 offset_left = 241.0
 offset_top = 235.0
 offset_right = 416.0
 offset_bottom = 258.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=927674642]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 262.0
-offset_right = 473.0
-offset_bottom = 302.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -33.0
+offset_right = 26.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Retry" type="Button" parent="VBoxContainer" unique_id=916160884]
 layout_mode = 2

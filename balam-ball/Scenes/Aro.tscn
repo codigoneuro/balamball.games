@@ -11,7 +11,8 @@ radius = 8.0
 position = Vector2(-3, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1577625655]
-position = Vector2(1, -1)
+position = Vector2(-0.9214287, -4.284135)
+scale = Vector2(0.6785714, 0.6682692)
 polygon = PackedVector2Array(3, -5, 6, -1, 6, 2, 4, 5, 1, 7, -4, 7, -7, 5, -8, 1, -8, -2, -6, -5, -3, -6, 1, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1985858501]

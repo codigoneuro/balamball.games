@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bmgghpyqmqe5g" path="res://Scenes/ball.tscn" id="4_shhme"]
 [ext_resource type="PackedScene" uid="uid://cya73b0rlat" path="res://Scenes/Aro.tscn" id="5_s4i1f"]
 [ext_resource type="PackedScene" uid="uid://gewi1be8mrsb" path="res://Scenes/MascaraJurado01.tscn" id="7_twe5h"]
+[ext_resource type="FontFile" uid="uid://gnxp5rtdb3pg" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="7_vjsom"]
 [ext_resource type="PackedScene" uid="uid://b8emeslqgafjr" path="res://Scenes/MascaraJurado02.tscn" id="8_d8vyx"]
 [ext_resource type="AudioStream" uid="uid://bo5rik50cr44g" path="res://music/partida.wav" id="9_vw4oq"]
+[ext_resource type="AudioStream" uid="uid://hrsbgb6ub20s" path="res://music/score.wav" id="11_upw65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3b8"]
 size = Vector2(290, 16)
@@ -23,10 +25,10 @@ size = Vector2(20, 190)
 size = Vector2(292, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twe5h"]
-size = Vector2(31, 68)
+size = Vector2(31, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8vyx"]
-size = Vector2(31, 67)
+size = Vector2(25, 63)
 
 [sub_resource type="Animation" id="Animation_bh37u"]
 length = 0.001
@@ -103,10 +105,10 @@ texture = ExtResource("1_shhme")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=49251775]
 
 [node name="Balam" parent="." unique_id=2899691 instance=ExtResource("2_2wvcj")]
-position = Vector2(-102, 1)
+position = Vector2(-107, 0)
 
 [node name="Tezcat" parent="." unique_id=14505957 instance=ExtResource("3_uh3b8")]
-position = Vector2(110, -5)
+position = Vector2(114, -5)
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=615023418]
 position = Vector2(10, -76)
@@ -126,7 +128,7 @@ shape = SubResource("RectangleShape2D_shhme")
 position = Vector2(-102, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall-der" unique_id=1482261027]
-position = Vector2(-52, -2)
+position = Vector2(-50, 3)
 shape = SubResource("RectangleShape2D_s4i1f")
 
 [node name="Flow" type="StaticBody2D" parent="." unique_id=1613215842]
@@ -148,14 +150,14 @@ position = Vector2(0, 100)
 position = Vector2(-151, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaBalam" unique_id=1285356806]
-position = Vector2(-3.5, -4)
+position = Vector2(-3.5, -2.5)
 shape = SubResource("RectangleShape2D_twe5h")
 
 [node name="PorteriaTezcat" type="Area2D" parent="." unique_id=1774403124]
 position = Vector2(159, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaTezcat" unique_id=1989252426]
-position = Vector2(-5.5, -2.5)
+position = Vector2(-2.5, -0.5)
 shape = SubResource("RectangleShape2D_d8vyx")
 
 [node name="LabelTezcat" type="Label" parent="." unique_id=856989848]
@@ -164,13 +166,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 225.0
-offset_top = -41.0
-offset_right = 289.0
-offset_bottom = -8.0
+offset_left = 192.0
+offset_top = -32.0
+offset_right = 320.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_vjsom")
+theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -181,13 +185,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -281.0
-offset_top = -40.0
-offset_right = -217.0
-offset_bottom = -6.0
+offset_left = -318.0
+offset_top = -33.0
+offset_right = -190.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_vjsom")
+theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -204,3 +210,19 @@ position = Vector2(256, -104)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=700108782]
 stream = ExtResource("9_vw4oq")
 autoplay = true
+
+[node name="BalamBall" type="Label" parent="." unique_id=862035036]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = -160.0
+offset_right = 52.0
+offset_bottom = -136.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_vjsom")
+theme_override_font_sizes/font_size = 19
+text = "BALAM BALL"
+
+[node name="ScorePoint" type="AudioStreamPlayer" parent="." unique_id=581252926]
+stream = ExtResource("11_upw65")

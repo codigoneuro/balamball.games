@@ -4,17 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dxig1p3boyirw" path="res://Characters/lose.png" id="2_kk8k2"]
 [ext_resource type="AudioStream" uid="uid://66dr8qjyu8g5" path="res://music/you lost.wav" id="3_e5yba"]
 
-[node name="GameOverScreen" type="Control" unique_id=2074000698]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameOverScreen" type="CanvasLayer" unique_id=900253024]
+process_mode = 3
 script = ExtResource("1_y8man")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1724758250]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,26 +17,39 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MascaraDerrota" type="TextureRect" parent="." unique_id=1832083246]
-layout_mode = 0
-offset_left = 173.0
-offset_right = 773.0
-offset_bottom = 510.0
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 67.0
+offset_right = 4.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
 texture = ExtResource("2_kk8k2")
 
 [node name="LabelPuntos" type="Label" parent="." unique_id=1911365975]
-layout_mode = 0
-offset_left = 202.0
-offset_top = 187.0
-offset_right = 413.0
-offset_bottom = 210.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
 
 [node name="BotonContainer" type="VBoxContainer" parent="." unique_id=1487683461]
-layout_mode = 0
-offset_left = 234.0
-offset_top = 215.0
-offset_right = 414.0
-offset_bottom = 312.0
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -48.5
+offset_right = 90.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BtnReintentar" type="Button" parent="BotonContainer" unique_id=1932800379]
 layout_mode = 2

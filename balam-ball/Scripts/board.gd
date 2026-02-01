@@ -1,9 +1,7 @@
 extends Node2D
 
-#  Ya no necesitamos las variables locales de puntos aquí
-# porque usaremos las de GameManager.
-
 @onready var pelota = $Ball 
+@onready var score_sound = $ScorePoint
 var escena_win = preload("res://Scenes/win_screen.tscn")
 var escena_game_over = preload("res://Scenes/game_over_screen.tscn")
 
@@ -14,7 +12,7 @@ func _ready():
 	$AroSuperior.body_entered.connect(_on_aro_anotado) 
 	$AroInferior.body_entered.connect(_on_aro_anotado)
 	
-	# ACTUALIZACIÓN: Leer los puntos al iniciar/recargar la escena 
+	# recargar la escena 
 	actualizar_interfaz()
 
 func actualizar_interfaz():
@@ -26,6 +24,10 @@ func actualizar_interfaz():
 func _on_gol_contra_balam(body):
 	if body.name == "Ball": 
 		GameManager.puntos_tezcat += 1 
+		# Sonido de puntos
+		#score_sound.play() # REPRODUCIR SONIDO
+		# Reproducir sonido inmediatamente al detectar el gol
+		if has_node("ScorePoint"): $ScorePoint.play()
 		# Disparamos el parpadeo
 		$AnimationPlayer.play("anotacion_tezcat")
 		# Esperamos a que la animación termine antes de reiniciar
@@ -35,6 +37,10 @@ func _on_gol_contra_balam(body):
 func _on_gol_contra_tezcat(body):
 	if body.name == "Ball": 
 		GameManager.puntos_balam += 1 
+		#Sonido de punto
+		#score_sound.play()
+		# Reproducir sonido inmediatamente al detectar el gol
+		if has_node("ScorePoint"): $ScorePoint.play()
 		# Disparamos el parpadeo
 		$AnimationPlayer.play("anotacion_balam")
 		# Esperamos a que la animación termine antes de reiniciar
@@ -46,15 +52,19 @@ func _on_aro_anotado(body):
 	if body.name == "Ball": 
 		var anotador = body.ultimo_jugador # 
 		if anotador != "": 
+			# Sonido de punto de muerte
+			#score_sound.play()
+			# Reproducir sonido también en el aro
+			if has_node("ScorePoint"): $ScorePoint.play()
 			Engine.time_scale = 0.2
 			await get_tree().create_timer(0.5).timeout
 			Engine.time_scale = 1.0
 			finalizar_juego(anotador, true)
 
-# --- CONTROL DE PARTIDA ---
-# En board.gd
+#  CONTROL DE PARTIDA
+
 func verificar_puntos():
-	# Verificamos los puntos usando el Autoload GameManager [cite: 6]
+	# Verificamos los puntos usando el Autoload GameManager 
 	if GameManager.puntos_balam >= GameManager.META_PUNTOS:
 		finalizar_juego("Balam", false) 
 	elif GameManager.puntos_tezcat >= GameManager.META_PUNTOS:
@@ -69,17 +79,15 @@ func finalizar_juego(ganador, es_subita):
 		$AudioStreamPlayer.stop() 
 	
 	get_tree().paused = true #
-	# CAMBIO CLAVE: Instanciamos las escenas en lugar de buscar nodos inexistentes
+	# Instanciamos las escenas en lugar de buscar nodos inexistentes
 	var pantalla
-	# Lógica para mostrar la pantalla correcta
-	# Suponiendo que el jugador principal es "Balam"
+
 	if ganador == "Balam":
 		pantalla = escena_win.instantiate()
-		
-		# Opcional: Si tienes un Label dentro de WinScreen para el nombre
-		# $WinScreen/LabelGanador.text = "¡Balam ha vencido!"
+	
 	else:
 		pantalla = escena_game_over.instantiate()
 		
 	# Añadimos la pantalla instanciada como hijo del tablero
-	add_child(pantalla)
+	
+	add_child.call_deferred(pantalla)

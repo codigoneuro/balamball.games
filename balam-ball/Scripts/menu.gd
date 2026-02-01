@@ -14,7 +14,6 @@ func _ready():
 		$VBoxContainer/Salir.pressed.connect(_on_salir_pressed)
 
 func _on_jugar_pressed():
-	# Ahora que la función acepta argumentos, esto no dará error
 	TRANSITION.change_scene_to_file("res://Scenes/board.tscn")
 
 func _on_salir_pressed():

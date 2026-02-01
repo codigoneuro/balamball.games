@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 80.0
+@export var SPEED = 130.0
 @export var limit_up = -51.0
 @export var limit_down = 51.0
 
