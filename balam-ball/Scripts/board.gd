@@ -4,6 +4,8 @@ extends Node2D
 # porque usaremos las de GameManager.
 
 @onready var pelota = $Ball 
+var escena_win = preload("res://Scenes/win_screen.tscn")
+var escena_game_over = preload("res://Scenes/game_over_screen.tscn")
 
 func _ready():
 	# Conexión de señales existentes 
@@ -62,7 +64,22 @@ func verificar_puntos():
 		get_tree().reload_current_scene()
 
 func finalizar_juego(ganador, es_subita):
-	# [cite: 7, 8] Lógica de fin de juego igual
-	var mensaje = "¡VICTORIA SÚBITA! " + ganador if es_subita else "¡GANADOR! " + ganador
-	print(mensaje)
-	get_tree().paused = true # [cite: 8]
+	# Detener música y pausar el motor físico
+	if has_node("AudioStreamPlayer"):
+		$AudioStreamPlayer.stop() 
+	
+	get_tree().paused = true #
+	# CAMBIO CLAVE: Instanciamos las escenas en lugar de buscar nodos inexistentes
+	var pantalla
+	# Lógica para mostrar la pantalla correcta
+	# Suponiendo que el jugador principal es "Balam"
+	if ganador == "Balam":
+		pantalla = escena_win.instantiate()
+		
+		# Opcional: Si tienes un Label dentro de WinScreen para el nombre
+		# $WinScreen/LabelGanador.text = "¡Balam ha vencido!"
+	else:
+		pantalla = escena_game_over.instantiate()
+		
+	# Añadimos la pantalla instanciada como hijo del tablero
+	add_child(pantalla)
