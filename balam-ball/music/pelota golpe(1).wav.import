@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crslhl7wd7lww"
+path="res://.godot/imported/pelota golpe(1).wav-fbbb248d627643dbee890fcb293c7daa.sample"
+
+[deps]
+
+source_file="res://music/pelota golpe(1).wav"
+dest_files=["res://.godot/imported/pelota golpe(1).wav-fbbb248d627643dbee890fcb293c7daa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8emeslqgafjr"]
+
+[ext_resource type="Texture2D" uid="uid://xmfhv7pkamow" path="res://Characters/mascara_juez_1.1.png" id="1_ng6ck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jydj7"]
+radius = 56.0
+
+[node name="MascaraJurado1" type="CharacterBody2D" unique_id=53149415]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1451726160]
+texture = ExtResource("1_ng6ck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=634414825]
+shape = SubResource("CircleShape2D_jydj7")

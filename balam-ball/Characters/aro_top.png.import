@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k2w5ypu5or6p"
-path="res://.godot/imported/Balam.png-1a37eb63498729e1f5e4b6a51730c4d8.ctex"
+uid="uid://c1l8b0fi8lo8p"
+path="res://.godot/imported/aro_top.png-c75800667f6332f0f24bbaddac330e95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Balam.png"
-dest_files=["res://.godot/imported/Balam.png-1a37eb63498729e1f5e4b6a51730c4d8.ctex"]
+source_file="res://Characters/aro_top.png"
+dest_files=["res://.godot/imported/aro_top.png-c75800667f6332f0f24bbaddac330e95.ctex"]
 
 [params]
 

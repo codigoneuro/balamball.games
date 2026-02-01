@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://cya73b0rlat"]
 
+[ext_resource type="Texture2D" uid="uid://c1l8b0fi8lo8p" path="res://Characters/aro_top.png" id="1_k07ov"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ica8"]
+radius = 8.0
 
 [node name="Aro" type="Area2D" unique_id=1098503941]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2089226491]
+position = Vector2(-3, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1577625655]
+position = Vector2(1, -1)
+polygon = PackedVector2Array(3, -5, 6, -1, 6, 2, 4, 5, 1, 7, -4, 7, -7, 5, -8, 1, -8, -2, -6, -5, -3, -6, 1, -6)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1985858501]
+position = Vector2(-3, 0)
 shape = SubResource("CircleShape2D_8ica8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003049931]
+texture = ExtResource("1_k07ov")

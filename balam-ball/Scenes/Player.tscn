@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dptdrrpn3igqq"]
 
 [ext_resource type="Script" uid="uid://b67fdvaxba62r" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://k2w5ypu5or6p" path="res://Characters/Balam.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://curf1wq7402qw" path="res://Characters/Balam-3.1.png" id="2_kyqiw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
-radius = 24.083189
+radius = 30.413813
 
 [node name="Balam" type="CharacterBody2D" unique_id=2899691 groups=["Balam"]]
 motion_mode = 1
@@ -12,9 +12,8 @@ script = ExtResource("1_kyqiw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=194443356]
 position = Vector2(0, 2)
-scale = Vector2(0.05, 0.047)
 texture = ExtResource("2_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334250930]
-position = Vector2(0, 2)
+position = Vector2(1, 4)
 shape = SubResource("CircleShape2D_kyqiw")

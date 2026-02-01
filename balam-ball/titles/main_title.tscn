@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddc7sr3uicq40"]
+
+[ext_resource type="Texture2D" uid="uid://dn1uhjaeosw4y" path="res://Characters/Logo.png" id="1_p0gna"]
+
+[node name="main_title" type="HBoxContainer" unique_id=1286153866]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = -105.0
+offset_right = 193.5
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(195, -7)
+
+[node name="Icono" type="TextureRect" parent="." unique_id=332478348]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("1_p0gna")

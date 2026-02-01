@@ -1,77 +1,17 @@
 [gd_scene format=3 uid="uid://b721tss5el1e6"]
 
 [ext_resource type="Texture2D" uid="uid://dpidsm386h6jm" path="res://Characters/ver2.png" id="1_1rerr"]
-[ext_resource type="Script" uid="uid://dtyj7dipujmhn" path="res://Scripts/menu.gd" id="1_cayip"]
-[ext_resource type="Texture2D" uid="uid://dn1uhjaeosw4y" path="res://Characters/Logo.png" id="2_xhh6f"]
-[ext_resource type="AudioStream" uid="uid://ccv282jaxb7pj" path="res://music/menu theme.mp3" id="4_158mb"]
 
-[node name="Title" type="Control" unique_id=519629909]
+[node name="Menu" type="Control" unique_id=1671087995]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cayip")
 
-[node name="background" type="TextureRect" parent="." unique_id=1862475735]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_1rerr")
-
-[node name="Logo" type="TextureRect" parent="." unique_id=314489808]
+[node name="Fondo" type="TextureRect" parent="." unique_id=909206500]
 layout_mode = 0
-offset_left = 222.0
-offset_top = 78.0
-offset_right = 609.0
-offset_bottom = 288.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_xhh6f")
-stretch_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=435831230]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.34100002
-anchor_top = 0.483
-anchor_right = 0.656
-anchor_bottom = 0.85300004
-offset_left = 1.7599792
-offset_top = 0.11999512
-offset_right = 0.15997314
-offset_bottom = -0.08001709
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Jugar" type="Button" parent="VBoxContainer" unique_id=444238076]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Jugar"
-
-[node name="Salir" type="Button" parent="VBoxContainer" unique_id=1901241953]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Salir"
-
-[node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1321885122]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Creditos"
-
-[node name="MusicaFondo" type="AudioStreamPlayer" parent="." unique_id=601456182]
-stream = ExtResource("4_158mb")
-autoplay = true
-mix_target = 1
-
-[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
-[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1rerr")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c61pklamncr5t"
-path="res://.godot/imported/tezcat.png-1d23c491ae3ecc1aefadba93900e7b78.ctex"
+uid="uid://dokevgbbbmre4"
+path="res://.godot/imported/aro_buttom.png-9e49eae35b3c2e25bd0c5d58f6197a2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/tezcat.png"
-dest_files=["res://.godot/imported/tezcat.png-1d23c491ae3ecc1aefadba93900e7b78.ctex"]
+source_file="res://Characters/aro_buttom.png"
+dest_files=["res://.godot/imported/aro_buttom.png-9e49eae35b3c2e25bd0c5d58f6197a2e.ctex"]
 
 [params]
 
