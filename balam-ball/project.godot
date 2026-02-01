@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Balam-Ball"
-run/main_scene="res://Scenes/board.tscn"
+run/main_scene="uid://b721tss5el1e6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://c64n844j6yt4n"
 
 [display]
 

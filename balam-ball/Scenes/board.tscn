@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://jfg4gyf6yon" path="res://Scenes/tezcat.tscn" id="3_uh3b8"]
 [ext_resource type="PackedScene" uid="uid://bmgghpyqmqe5g" path="res://Scenes/ball.tscn" id="4_shhme"]
 [ext_resource type="PackedScene" uid="uid://cya73b0rlat" path="res://Scenes/Aro.tscn" id="5_s4i1f"]
+[ext_resource type="PackedScene" uid="uid://gewi1be8mrsb" path="res://Scenes/MascaraJurado01.tscn" id="7_twe5h"]
+[ext_resource type="PackedScene" uid="uid://b8emeslqgafjr" path="res://Scenes/MascaraJurado02.tscn" id="8_d8vyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3b8"]
 size = Vector2(290, 16)
@@ -23,7 +25,73 @@ size = Vector2(292, 15)
 size = Vector2(31, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8vyx"]
-size = Vector2(31, 75)
+size = Vector2(31, 67)
+
+[sub_resource type="Animation" id="Animation_bh37u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelBalam:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelTezcat:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_twe5h"]
+resource_name = "anotacion_balam"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelBalam:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06464383, 0.1, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.07058823, 0.07058823, 0.07058823, 1), Color(0.07058823, 0.07058823, 0.07058823, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d8vyx"]
+resource_name = "anotacion_tezcat"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelTezcat:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw4oq"]
+_data = {
+&"RESET": SubResource("Animation_bh37u"),
+&"anotacion_balam": SubResource("Animation_twe5h"),
+&"anotacion_tezcat": SubResource("Animation_d8vyx")
+}
 
 [node name="Board" type="Node2D" unique_id=1693222382]
 script = ExtResource("1_bh37u")
@@ -68,13 +136,12 @@ position = Vector2(-2, 9.5)
 shape = SubResource("RectangleShape2D_bh37u")
 
 [node name="Ball" parent="." unique_id=1493512876 instance=ExtResource("4_shhme")]
-position = Vector2(0, -25)
 
 [node name="AroSuperior" parent="." unique_id=1098503941 instance=ExtResource("5_s4i1f")]
-position = Vector2(0, -71)
+position = Vector2(0, -82)
 
 [node name="AroInferior" parent="." unique_id=1203851843 instance=ExtResource("5_s4i1f")]
-position = Vector2(0, 93)
+position = Vector2(0, 100)
 
 [node name="PorteriaBalam" type="Area2D" parent="." unique_id=828826630]
 position = Vector2(-151, 3)
@@ -87,5 +154,48 @@ shape = SubResource("RectangleShape2D_twe5h")
 position = Vector2(159, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaTezcat" unique_id=1989252426]
-position = Vector2(-5.5, -3.5)
+position = Vector2(-5.5, -2.5)
 shape = SubResource("RectangleShape2D_d8vyx")
+
+[node name="LabelTezcat" type="Label" parent="." unique_id=856989848]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 225.0
+offset_top = -41.0
+offset_right = 289.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelBalam" type="Label" parent="." unique_id=2004977458]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -40.0
+offset_right = -217.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1169975619]
+libraries/ = SubResource("AnimationLibrary_vw4oq")
+
+[node name="MascaraJurado1" parent="." unique_id=53149415 instance=ExtResource("7_twe5h")]
+position = Vector2(-250, -104)
+
+[node name="MascaraJurado2" parent="." unique_id=2085439251 instance=ExtResource("8_d8vyx")]
+position = Vector2(256, -104)

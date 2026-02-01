@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfoymaxstibuc"
-path="res://.godot/imported/star_ball_2.png-2e4a9047edf8c2e95925d44c42e65b80.ctex"
+uid="uid://curf1wq7402qw"
+path="res://.godot/imported/Balam-3.1.png-00a0b18d35363494978bb2f09e237ca8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/star_ball_2.png"
-dest_files=["res://.godot/imported/star_ball_2.png-2e4a9047edf8c2e95925d44c42e65b80.ctex"]
+source_file="res://Characters/Balam-3.1.png"
+dest_files=["res://.godot/imported/Balam-3.1.png-00a0b18d35363494978bb2f09e237ca8.ctex"]
 
 [params]
 
