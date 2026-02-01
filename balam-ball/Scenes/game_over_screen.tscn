@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dg82utatalf0u"]
+
+[ext_resource type="Script" uid="uid://bgnlwpfotdv3e" path="res://Scripts/game_over_screen.gd" id="1_y8man"]
+[ext_resource type="Texture2D" uid="uid://dxig1p3boyirw" path="res://Characters/lose.png" id="2_kk8k2"]
+[ext_resource type="AudioStream" uid="uid://66dr8qjyu8g5" path="res://music/you lost.wav" id="3_e5yba"]
+
+[node name="GameOverScreen" type="Control" unique_id=2074000698]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8man")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1724758250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MascaraDerrota" type="TextureRect" parent="." unique_id=1832083246]
+layout_mode = 0
+offset_left = 173.0
+offset_right = 773.0
+offset_bottom = 510.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kk8k2")
+
+[node name="LabelPuntos" type="Label" parent="." unique_id=1911365975]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 187.0
+offset_right = 413.0
+offset_bottom = 210.0
+
+[node name="BotonContainer" type="VBoxContainer" parent="." unique_id=1487683461]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 215.0
+offset_right = 414.0
+offset_bottom = 312.0
+
+[node name="BtnReintentar" type="Button" parent="BotonContainer" unique_id=1932800379]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Retry"
+
+[node name="BtnMenu" type="Button" parent="BotonContainer" unique_id=2125262849]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1302517985]
+stream = ExtResource("3_e5yba")
+autoplay = true
+
+[connection signal="pressed" from="BotonContainer/BtnReintentar" to="." method="_on_btn_reintentar_pressed"]
+[connection signal="pressed" from="BotonContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]

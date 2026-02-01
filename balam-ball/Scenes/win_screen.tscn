@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bj55ge5rk3e6r"]
+
+[ext_resource type="Script" uid="uid://cu3enh6eiko31" path="res://Scripts/win_screen.gd" id="1_a00f1"]
+[ext_resource type="Texture2D" uid="uid://b63px2ivcf08b" path="res://Characters/win.png" id="2_awi1s"]
+[ext_resource type="AudioStream" uid="uid://b7yav4xi11brv" path="res://music/you win.wav" id="3_awi1s"]
+
+[node name="WinScreen" type="Control" unique_id=1468089661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a00f1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1119304952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1375585486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_right = 205.33337
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_awi1s")
+stretch_mode = 6
+
+[node name="Record" type="Label" parent="." unique_id=1661221672]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 235.0
+offset_right = 416.0
+offset_bottom = 258.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=927674642]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 262.0
+offset_right = 473.0
+offset_bottom = 302.0
+
+[node name="Retry" type="Button" parent="VBoxContainer" unique_id=916160884]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Retry"
+
+[node name="Menu" type="Button" parent="VBoxContainer" unique_id=493285027]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=626899844]
+stream = ExtResource("3_awi1s")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
