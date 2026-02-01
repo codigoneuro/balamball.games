@@ -21,6 +21,7 @@ func _on_retry_pressed() -> void:
 	
 	get_tree().change_scene_to_file("res://Scenes/board.tscn")
 
+
 func _on_menu_pressed() -> void:
 	# Reiniciar puntos también al ir al menú
 	GameManager.puntos_balam = 0

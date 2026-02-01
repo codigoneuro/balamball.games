@@ -74,7 +74,6 @@ func verificar_puntos():
 		get_tree().reload_current_scene()
 
 func finalizar_juego(ganador, es_subita):
-	# Detener música y pausar el motor físico
 	if has_node("AudioStreamPlayer"):
 		$AudioStreamPlayer.stop() 
 	
