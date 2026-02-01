@@ -13,15 +13,12 @@ config_version=5
 config/name="Balam-Ball"
 run/main_scene="uid://b721tss5el1e6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://nmnq1i0hi6l7"
 
 [autoload]
 
-<<<<<<< HEAD
 GameManager="*uid://c64n844j6yt4n"
-=======
 TRANSITION="*uid://ccb1jnom7o6iv"
->>>>>>> origin/main
 
 [display]
 

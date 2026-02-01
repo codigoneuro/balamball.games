@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cya73b0rlat" path="res://Scenes/Aro.tscn" id="5_s4i1f"]
 [ext_resource type="PackedScene" uid="uid://gewi1be8mrsb" path="res://Scenes/MascaraJurado01.tscn" id="7_twe5h"]
 [ext_resource type="PackedScene" uid="uid://b8emeslqgafjr" path="res://Scenes/MascaraJurado02.tscn" id="8_d8vyx"]
+[ext_resource type="AudioStream" uid="uid://bo5rik50cr44g" path="res://music/partida.wav" id="9_vw4oq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3b8"]
 size = Vector2(290, 16)
@@ -199,3 +200,7 @@ position = Vector2(-250, -104)
 
 [node name="MascaraJurado2" parent="." unique_id=2085439251 instance=ExtResource("8_d8vyx")]
 position = Vector2(256, -104)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=700108782]
+stream = ExtResource("9_vw4oq")
+autoplay = true
