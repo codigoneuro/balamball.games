@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://br4bobvux3068"]
 
+[ext_resource type="Script" uid="uid://dqr2vkbx6yyj" path="res://Scripts/board.gd" id="1_bh37u"]
 [ext_resource type="Texture2D" uid="uid://dpidsm386h6jm" path="res://Characters/ver2.png" id="1_shhme"]
 [ext_resource type="PackedScene" uid="uid://dptdrrpn3igqq" path="res://Scenes/Player.tscn" id="2_2wvcj"]
 [ext_resource type="PackedScene" uid="uid://jfg4gyf6yon" path="res://Scenes/tezcat.tscn" id="3_uh3b8"]
 [ext_resource type="PackedScene" uid="uid://bmgghpyqmqe5g" path="res://Scenes/ball.tscn" id="4_shhme"]
+[ext_resource type="PackedScene" uid="uid://cya73b0rlat" path="res://Scenes/Aro.tscn" id="5_s4i1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3b8"]
-size = Vector2(281, 16)
+size = Vector2(290, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shhme"]
 size = Vector2(19, 192)
@@ -15,9 +17,16 @@ size = Vector2(19, 192)
 size = Vector2(20, 190)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh37u"]
-size = Vector2(283, 15)
+size = Vector2(292, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twe5h"]
+size = Vector2(31, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8vyx"]
+size = Vector2(31, 75)
 
 [node name="Board" type="Node2D" unique_id=1693222382]
+script = ExtResource("1_bh37u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=481310172]
 texture = ExtResource("1_shhme")
@@ -25,16 +34,16 @@ texture = ExtResource("1_shhme")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=49251775]
 
 [node name="Balam" parent="." unique_id=2899691 instance=ExtResource("2_2wvcj")]
-position = Vector2(-90, 9)
+position = Vector2(-102, 1)
 
 [node name="Tezcat" parent="." unique_id=14505957 instance=ExtResource("3_uh3b8")]
-position = Vector2(112, 4)
+position = Vector2(110, -5)
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=615023418]
-position = Vector2(9, -79)
+position = Vector2(10, -76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=931760740]
-position = Vector2(-4.5, -13)
+position = Vector2(-9, -13)
 shape = SubResource("RectangleShape2D_uh3b8")
 
 [node name="Wall-iz" type="StaticBody2D" parent="." unique_id=237288256]
@@ -48,15 +57,35 @@ shape = SubResource("RectangleShape2D_shhme")
 position = Vector2(-102, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall-der" unique_id=1482261027]
-position = Vector2(-47, 0)
+position = Vector2(-52, -2)
 shape = SubResource("RectangleShape2D_s4i1f")
 
 [node name="Flow" type="StaticBody2D" parent="." unique_id=1613215842]
 position = Vector2(5, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flow" unique_id=1605171108]
-position = Vector2(2.5, 9.5)
+position = Vector2(-2, 9.5)
 shape = SubResource("RectangleShape2D_bh37u")
 
 [node name="Ball" parent="." unique_id=1493512876 instance=ExtResource("4_shhme")]
 position = Vector2(0, -25)
+
+[node name="AroSuperior" parent="." unique_id=1098503941 instance=ExtResource("5_s4i1f")]
+position = Vector2(0, -71)
+
+[node name="AroInferior" parent="." unique_id=1203851843 instance=ExtResource("5_s4i1f")]
+position = Vector2(0, 93)
+
+[node name="PorteriaBalam" type="Area2D" parent="." unique_id=828826630]
+position = Vector2(-151, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaBalam" unique_id=1285356806]
+position = Vector2(-3.5, -4)
+shape = SubResource("RectangleShape2D_twe5h")
+
+[node name="PorteriaTezcat" type="Area2D" parent="." unique_id=1774403124]
+position = Vector2(159, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaTezcat" unique_id=1989252426]
+position = Vector2(-5.5, -3.5)
+shape = SubResource("RectangleShape2D_d8vyx")

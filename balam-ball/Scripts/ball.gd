@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 @export var velocidad_inicial = 150.0
-@export var incremento_velocidad = 1
+@export var incremento_velocidad = 1.05 
 
+var ultimo_jugador: String = ""
 var direccion = Vector2.ZERO
 
 func _ready() -> void:
@@ -24,6 +25,12 @@ func _physics_process(delta: float) -> void:
 		var objeto_tocado = colision.get_collider()
 		
 		if objeto_tocado:
-			if objeto_tocado.is_in_group("Balam") or objeto_tocado.is_in_group("Tezcat"):
+			# Registramos el último toque basado en el grupo del objeto
+			if objeto_tocado.is_in_group("Balam"):
+				ultimo_jugador = "Balam"
 				velocity *= incremento_velocidad
-				print("Choqué con un jugador!")
+			elif objeto_tocado.is_in_group("Tezcat"):
+				ultimo_jugador = "Tezcat"
+				velocity *= incremento_velocidad
+			
+	
