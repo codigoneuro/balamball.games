@@ -4,6 +4,7 @@ extends Node2D
 @onready var score_sound = $ScorePoint
 var escena_win = preload("res://Scenes/win_screen.tscn")
 var escena_game_over = preload("res://Scenes/game_over_screen.tscn")
+var escena_sudden = preload("res://Scenes/sudden_death_screen.tscn")
 
 func _ready():
 	# Conexión de señales existentes 
@@ -81,12 +82,20 @@ func finalizar_juego(ganador, es_subita):
 	# Instanciamos las escenas en lugar de buscar nodos inexistentes
 	var pantalla
 
-	if ganador == "Balam":
-		pantalla = escena_win.instantiate()
-	
+	# Lógica para decidir qué pantalla mostrar
+	if es_subita:
+		# Si la victoria es por el aro, usamos la escena de muerte súbita
+		pantalla = escena_sudden.instantiate()
 	else:
-		pantalla = escena_game_over.instantiate()
+		# Si la victoria es por puntos normales
+		if ganador == "Balam":
+			pantalla = escena_win.instantiate()
+			# Solo llamamos a establecer_ganador en la pantalla de Win
+			if pantalla.has_method("establecer_ganador"):
+				pantalla.establecer_ganador(GameManager.puntos_balam)
+		else:
+			# Si gana Tezcat por puntos
+			pantalla = escena_game_over.instantiate()
 		
-	# Añadimos la pantalla instanciada como hijo del tablero
-	
+	# 2. Añadimos la pantalla seleccionada a la escena
 	add_child.call_deferred(pantalla)

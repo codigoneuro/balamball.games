@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://br4bobvux3068"]
 
 [ext_resource type="Script" uid="uid://dqr2vkbx6yyj" path="res://Scripts/board.gd" id="1_bh37u"]
-[ext_resource type="Texture2D" uid="uid://dpidsm386h6jm" path="res://Characters/ver2.png" id="1_shhme"]
+[ext_resource type="Texture2D" uid="uid://c3yonld7lb33i" path="res://Characters/ver2.png" id="1_shhme"]
 [ext_resource type="PackedScene" uid="uid://dptdrrpn3igqq" path="res://Scenes/Player.tscn" id="2_2wvcj"]
 [ext_resource type="PackedScene" uid="uid://jfg4gyf6yon" path="res://Scenes/tezcat.tscn" id="3_uh3b8"]
 [ext_resource type="PackedScene" uid="uid://bmgghpyqmqe5g" path="res://Scenes/ball.tscn" id="4_shhme"]
 [ext_resource type="PackedScene" uid="uid://cya73b0rlat" path="res://Scenes/Aro.tscn" id="5_s4i1f"]
 [ext_resource type="PackedScene" uid="uid://gewi1be8mrsb" path="res://Scenes/MascaraJurado01.tscn" id="7_twe5h"]
-[ext_resource type="FontFile" uid="uid://gnxp5rtdb3pg" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="7_vjsom"]
+[ext_resource type="FontFile" uid="uid://cwb7vnrp6fbi4" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="7_vjsom"]
 [ext_resource type="PackedScene" uid="uid://b8emeslqgafjr" path="res://Scenes/MascaraJurado02.tscn" id="8_d8vyx"]
-[ext_resource type="AudioStream" uid="uid://bo5rik50cr44g" path="res://music/partida.wav" id="9_vw4oq"]
-[ext_resource type="AudioStream" uid="uid://hrsbgb6ub20s" path="res://music/score.wav" id="11_upw65"]
+[ext_resource type="AudioStream" uid="uid://dlj4ijn4i0gnt" path="res://music/partida.mp3" id="10_upw65"]
+[ext_resource type="AudioStream" uid="uid://b8vx5d8soa4lw" path="res://music/score.wav" id="11_upw65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3b8"]
 size = Vector2(290, 16)
@@ -104,6 +104,13 @@ texture = ExtResource("1_shhme")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=49251775]
 
+[node name="DivideBoard" type="Line2D" parent="." unique_id=108434147]
+position = Vector2(312, 240)
+rotation = -3.0979593
+points = PackedVector2Array(318.33322, 138.24603, 324.9634, 290.10138, 325.31235, 298.09375)
+width = 3.0
+default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
+
 [node name="Balam" parent="." unique_id=2899691 instance=ExtResource("2_2wvcj")]
 position = Vector2(-107, 0)
 
@@ -145,6 +152,7 @@ position = Vector2(0, -82)
 
 [node name="AroInferior" parent="." unique_id=1203851843 instance=ExtResource("5_s4i1f")]
 position = Vector2(0, 100)
+rotation = 3.185226
 
 [node name="PorteriaBalam" type="Area2D" parent="." unique_id=828826630]
 position = Vector2(-151, 3)
@@ -208,7 +216,7 @@ position = Vector2(-250, -104)
 position = Vector2(256, -104)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=700108782]
-stream = ExtResource("9_vw4oq")
+stream = ExtResource("10_upw65")
 autoplay = true
 
 [node name="BalamBall" type="Label" parent="." unique_id=862035036]

@@ -7,7 +7,15 @@ func _ready() -> void:
 	# Animación de entrada: la máscara aparece desde arriba 
 	mascara.position.y = -100
 	var tween = create_tween()
-	tween.tween_property(mascara, "position:y", 100, 1.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(mascara, "position:y", 35, 1.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+# Función para recibir el puntaje del ganador desde board.gd
+func establecer_ganador(puntos: int):
+	# Si la función se llama justo al instanciar, esperamos a que los nodos carguen
+	if not is_node_ready():
+		await ready
+	
+	# Mostramos el puntaje obtenido para ganar
+	record_label.text = "¡Ganaste con " + str(puntos) + " puntos!"
 
 func _on_retry_pressed() -> void:
 	# Reiniciar los puntos en el GameManager

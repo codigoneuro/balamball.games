@@ -1,7 +1,7 @@
 extends Control
 
 # Usamos la ruta completa si es necesario
-@onready var mascara = $Mascara  # <--- Revisa que se llame así en el árbol
+@onready var mascara = $TextureRect  # <--- Revisa que se llame así en el árbol
 @onready var contenedor_texto = $VBoxContainer 
 
 func _ready():

@@ -3,20 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://c1l8b0fi8lo8p" path="res://Characters/aro_top.png" id="1_k07ov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ica8"]
-radius = 8.0
+radius = 5.0990195
 
 [node name="Aro" type="Area2D" unique_id=1098503941]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2089226491]
-position = Vector2(-3, 0)
+[node name="Hoyo" type="StaticBody2D" parent="." unique_id=2089226491]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1577625655]
-position = Vector2(-0.9214287, -4.284135)
-scale = Vector2(0.6785714, 0.6682692)
-polygon = PackedVector2Array(3, -5, 6, -1, 6, 2, 4, 5, 1, 7, -4, 7, -7, 5, -8, 1, -8, -2, -6, -5, -3, -6, 1, -6)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hoyo" unique_id=1577625655]
+position = Vector2(2.0000002, -0.99999994)
+scale = Vector2(0.93749994, 0.9567308)
+polygon = PackedVector2Array(11.266668, -5.823619, 12.800002, -3.1356788, 13.866668, 1.0452261, 12.800002, 6.271357, 10.666668, 10.452262, 7.466667, 13.587941, 2.1333334, 15.678393, -8.533335, 14.633167, -13.86667, 10.452262, -7.466668, 7.3165836, -3.2000008, 7.3165836, -2.3841858e-07, 6.271357, 2.1333334, 4.180905, 3.2, 2.0904522, 3.2, -1.0452263, 2.1333334, -4.180905, -2.3841858e-07, -6.2713575, -3.2000008, -7.3165836, -5.3333344, -8.36181, -7.466668, -7.3165836, -9.600002, -5.2261314, -13.86667, -8.36181, -7.933335, -13.1402025, -3.6666675, -14.185429, -0.46666706, -14.185429, 2.7333336, -13.1402025, 5.9333344, -11.04975, 9.133334, -8.959297)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1985858501]
-position = Vector2(-3, 0)
+position = Vector2(-14, 2)
 shape = SubResource("CircleShape2D_8ica8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003049931]
