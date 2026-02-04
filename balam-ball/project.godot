@@ -19,6 +19,7 @@ config/icon="uid://nmnq1i0hi6l7"
 
 GameManager="*uid://c64n844j6yt4n"
 TRANSITION="*uid://ccb1jnom7o6iv"
+AudioManager="*uid://bicee2a36fp6p"
 
 [display]
 

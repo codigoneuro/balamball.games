@@ -25,10 +25,10 @@ size = Vector2(20, 190)
 size = Vector2(292, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twe5h"]
-size = Vector2(31, 65)
+size = Vector2(31, 174)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8vyx"]
-size = Vector2(25, 63)
+size = Vector2(25, 186)
 
 [sub_resource type="Animation" id="Animation_bh37u"]
 length = 0.001
@@ -112,10 +112,10 @@ width = 3.0
 default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
 
 [node name="Balam" parent="." unique_id=2899691 instance=ExtResource("2_2wvcj")]
-position = Vector2(-107, 0)
+position = Vector2(-112, 0)
 
 [node name="Tezcat" parent="." unique_id=14505957 instance=ExtResource("3_uh3b8")]
-position = Vector2(114, -5)
+position = Vector2(120, -5)
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=615023418]
 position = Vector2(10, -76)
@@ -148,24 +148,24 @@ shape = SubResource("RectangleShape2D_bh37u")
 [node name="Ball" parent="." unique_id=1493512876 instance=ExtResource("4_shhme")]
 
 [node name="AroSuperior" parent="." unique_id=1098503941 instance=ExtResource("5_s4i1f")]
-position = Vector2(0, -82)
+position = Vector2(0, -85)
 
 [node name="AroInferior" parent="." unique_id=1203851843 instance=ExtResource("5_s4i1f")]
 position = Vector2(0, 100)
-rotation = 3.185226
+rotation = 3.450516
 
 [node name="PorteriaBalam" type="Area2D" parent="." unique_id=828826630]
 position = Vector2(-151, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaBalam" unique_id=1285356806]
-position = Vector2(-3.5, -2.5)
+position = Vector2(-3.5, 7)
 shape = SubResource("RectangleShape2D_twe5h")
 
 [node name="PorteriaTezcat" type="Area2D" parent="." unique_id=1774403124]
 position = Vector2(159, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaTezcat" unique_id=1989252426]
-position = Vector2(-2.5, -0.5)
+position = Vector2(-2.5, 14)
 shape = SubResource("RectangleShape2D_d8vyx")
 
 [node name="LabelTezcat" type="Label" parent="." unique_id=856989848]
@@ -233,4 +233,5 @@ theme_override_font_sizes/font_size = 19
 text = "BALAM BALL"
 
 [node name="ScorePoint" type="AudioStreamPlayer" parent="." unique_id=581252926]
+process_mode = 3
 stream = ExtResource("11_upw65")

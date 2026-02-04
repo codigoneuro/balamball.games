@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dg82utatalf0u"]
 
 [ext_resource type="Script" uid="uid://bgnlwpfotdv3e" path="res://Scripts/game_over_screen.gd" id="1_y8man"]
-[ext_resource type="Texture2D" uid="uid://dxig1p3boyirw" path="res://Characters/lose.png" id="2_kk8k2"]
-[ext_resource type="AudioStream" uid="uid://66dr8qjyu8g5" path="res://music/you lost.wav" id="3_e5yba"]
+[ext_resource type="Texture2D" uid="uid://jbrl5er7guhh" path="res://Characters/lose.png" id="2_kk8k2"]
+[ext_resource type="AudioStream" uid="uid://chvupw2onnav2" path="res://music/you lost.wav" id="3_e5yba"]
 
 [node name="GameOverScreen" type="CanvasLayer" unique_id=900253024]
 process_mode = 3

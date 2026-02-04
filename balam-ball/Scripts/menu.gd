@@ -5,13 +5,6 @@ extends Control
 func _ready():
 	if musica:
 		musica.play()
-	
-	# Verifica que el nombre después de la barra "/" sea el exacto del nodo
-	#if has_node("VBoxContainer/Jugar"):
-	#	$VBoxContainer/Jugar.pressed.connect(_on_jugar_pressed)
-	
-	#if has_node("VBoxContainer/Salir"):
-	#	$VBoxContainer/Salir.pressed.connect(_on_salir_pressed)
 
 func _on_jugar_pressed():
 	TRANSITION.change_scene_to_file("res://Scenes/board.tscn")

@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bmgghpyqmqe5g"]
 
 [ext_resource type="Script" uid="uid://ink87sgsn71s" path="res://Scripts/ball.gd" id="1_ij5cq"]
-[ext_resource type="Texture2D" uid="uid://cakrsmm606iro" path="res://Characters/normal-ball-2.png" id="2_ij5cq"]
-[ext_resource type="AudioStream" uid="uid://crslhl7wd7lww" path="res://music/pelota golpe(1).wav" id="3_376qj"]
+[ext_resource type="Texture2D" uid="uid://dpbc4egh313xm" path="res://Characters/normal-ball-2.png" id="2_ij5cq"]
+[ext_resource type="AudioStream" uid="uid://b5uw6biebhi5f" path="res://music/pelota golpe(1).wav" id="3_376qj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij5cq"]
 radius = 49.999996
 
 [node name="Ball" type="CharacterBody2D" unique_id=1493512876]
+process_mode = 3
 scale = Vector2(0.25, 0.25)
 motion_mode = 1
 safe_margin = 0.1
