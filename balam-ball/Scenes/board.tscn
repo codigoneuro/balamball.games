@@ -112,7 +112,7 @@ width = 3.0
 default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
 
 [node name="Balam" parent="." unique_id=2899691 instance=ExtResource("2_2wvcj")]
-position = Vector2(-112, 0)
+position = Vector2(-114, 0)
 
 [node name="Tezcat" parent="." unique_id=14505957 instance=ExtResource("3_uh3b8")]
 position = Vector2(120, -5)
