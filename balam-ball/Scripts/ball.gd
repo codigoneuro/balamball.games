@@ -29,21 +29,32 @@ func _physics_process(delta: float) -> void:
 	var colision = move_and_collide(velocity * delta) 
 	if colision:
 		var normal = colision.get_normal() 
+		var objeto_tocado = colision.get_collider() 
+		
 		velocity = velocity.bounce(normal) 
 		
-		# Evita que la pelota se quede pegada
-		global_position += normal * 2.0 
+		# --- SOLUCIÓN AL BUCLE INFINITO ---
+		# Si el rebote es muy recto (vertical u horizontal), añadimos una desviación
+		if abs(normal.y) > 0.9 or abs(normal.x) > 0.9:
+			var desviacion = randf_range(-15.0, 15.0) # Pequeño ángulo en grados
+			velocity = velocity.rotated(deg_to_rad(desviacion))
 		
-		var objeto_tocado = colision.get_collider() 
+		# Separación dinámica para evitar que se pegue
+		var factor_separacion = 5.0 if abs(normal.x) > 0.5 else 2.0
+		global_position += normal * factor_separacion
+		
 		if objeto_tocado: 
-			if objeto_tocado.is_in_group("Balam"): 
-				ultimo_jugador = "Balam" 
+			if objeto_tocado.is_in_group("Balam") or objeto_tocado.is_in_group("Tezcat"):
+				ultimo_jugador = "Balam" if objeto_tocado.is_in_group("Balam") else "Tezcat"
 				velocity *= incremento_velocidad 
-			elif objeto_tocado.is_in_group("Tezcat"): 
-				ultimo_jugador = "Tezcat" 
-				velocity *= incremento_velocidad
-			# Reproducir sonido
-			$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.2)
-			$AudioStreamPlayer2D.play()
-			print("¡Golpe de jugador detectado!")
-	
+				
+				# Forzar salida hacia el campo contrario
+				if objeto_tocado.is_in_group("Balam"):
+					velocity.x = abs(velocity.x) 
+				else:
+					velocity.x = -abs(velocity.x)
+
+			# Sonido de rebote
+			if has_node("AudioStreamPlayer2D"):
+				$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.2)
+				$AudioStreamPlayer2D.play()

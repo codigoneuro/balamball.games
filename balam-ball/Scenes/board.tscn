@@ -104,10 +104,38 @@ texture = ExtResource("1_shhme")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=49251775]
 
+[node name="SlideLeft" type="Line2D" parent="." unique_id=386873981]
+position = Vector2(175.00002, 239.00002)
+rotation = -3.0979593
+points = PackedVector2Array(318.33322, 138.24603, 324.9634, 290.10138, 325.26874, 297.09473)
+width = 3.0
+default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
+
+[node name="SlideRight" type="Line2D" parent="." unique_id=500503650]
+position = Vector2(454, 240.00002)
+rotation = -3.0979593
+points = PackedVector2Array(318.37683, 139.24509, 324.0331, 268.79504, 324.9634, 290.10138, 325.31235, 298.09375)
+width = 3.0
+default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
+
+[node name="ToLiner" type="Line2D" parent="." unique_id=1430728512]
+position = Vector2(-4.07893, -58.39706)
+scale = Vector2(1.0283258, 0.81861156)
+points = PackedVector2Array(-40, -15.395508, -66, -15.395508, -128.28725, -15.395508, -11, -15.395508, 28, -15.395508, 47, -15.395508, 141.08266, -15.395508)
+width = 3.0
+default_color = Color(0.32941177, 0.827451, 0.52156866, 1)
+
+[node name="ToLiner2" type="Line2D" parent="." unique_id=374312487]
+position = Vector2(-4.580448, 98.60294)
+scale = Vector2(1.0175275, 0.81861156)
+points = PackedVector2Array(-40, -15.395508, -66, -15.395508, -129.15578, -15.395508, -11, -15.395508, 28, -15.395508, 47, -15.395508, 143.02106, -15.395515)
+width = 3.0
+default_color = Color(0.32941177, 0.827451, 0.52156866, 1)
+
 [node name="DivideBoard" type="Line2D" parent="." unique_id=108434147]
 position = Vector2(312, 240)
 rotation = -3.0979593
-points = PackedVector2Array(318.33322, 138.24603, 324.9634, 290.10138, 325.31235, 298.09375)
+points = PackedVector2Array(318.46408, 141.24318, 324.9634, 290.10138, 325.22513, 296.09564)
 width = 3.0
 default_color = Color(0.22745098, 0.9764706, 0.5568628, 1)
 
