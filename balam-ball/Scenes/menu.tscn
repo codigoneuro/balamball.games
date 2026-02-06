@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dtyj7dipujmhn" path="res://Scripts/menu.gd" id="1_cayip"]
 [ext_resource type="Texture2D" uid="uid://cpb54vmyc3lrt" path="res://Characters/Logo.png" id="2_xhh6f"]
 [ext_resource type="AudioStream" uid="uid://of1ugtb7c4xd" path="res://music/menu theme.mp3" id="4_158mb"]
+[ext_resource type="FontFile" uid="uid://cwb7vnrp6fbi4" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="4_wwsa2"]
 
 [node name="Title" type="Control" unique_id=519629909]
 layout_mode = 3
@@ -53,18 +54,21 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_wwsa2")
 text = "Play"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=1901241953]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_wwsa2")
 text = "Exit"
 
 [node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1321885122]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_wwsa2")
 text = "Credits"
 
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="." unique_id=601456182]
